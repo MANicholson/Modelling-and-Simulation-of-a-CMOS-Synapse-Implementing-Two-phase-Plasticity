@@ -1,5 +1,7 @@
 # README
 
+An extensive review of the code is provided in the "Detailed analysis of code - bachelor thesis" file.
+
 ## Overview
 
 This project involves building and testing a Spiking Neural Network (SNN) using the `jax`, `equinox`, and `snntorch` libraries. The SNN is designed to process input data encoded as spike trains, generate synaptic weights, and then test the network's performance using a test dataset.
