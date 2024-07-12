@@ -23,37 +23,37 @@ Install the required packages using the following commands:
 !pip install equinox
 ```
 
-## Steps
+## How the code functions
 
 ### 1. Importing Data
-- Mount the Google Drive and load the training and test datasets.
+- Mounts the Google Drive and load the training and test datasets.
 - The datasets should be in CSV format.
 
 ### 2. Data Encoding
-- Encode the data into spike trains using rate encoding.
-- Define parameters for spike length, gap length, number of synapses, timestep, and maximum spiking frequency.
-- Use the `generate_input_spikes` function to transform the datasets into input spike arrays.
+- Encodes the data into spike trains using rate encoding.
+- Defines parameters for spike length, gap length, number of synapses, timestep, and maximum spiking frequency.
+- Uses the `generate_input_spikes` function to transform the datasets into input spike arrays.
 
 ### 3. Stimulus Input Creation
-- Define parameters for stimulus magnitude and the number of secondary neurons.
-- Use the `create_input_stimuli` function to create the stimulus input for the network.
+- Defines parameters for stimulus magnitude and the number of secondary neurons.
+- Uses the `create_input_stimuli` function to create the stimulus input for the network.
 
 ### 4. Neural Network Model
-- Define a class `many_synapse` to model the neurons in the network, including the synaptic weight updates and neuron state updates.
-- Set various constants required for the differential equations governing the neural network behavior.
+- Defines a class `many_synapse` to model the neurons in the network, including the synaptic weight updates and neuron state updates.
+- Sets various constants required for the differential equations governing the neural network behavior.
 
 ### 5. Training the Network
-- Create an instance of the `many_synapse` class with the appropriate parameters.
-- Generate synaptic weights using the training spike inputs and stimuli.
-- Store and plot the final synaptic weights for each secondary neuron.
+- Creates an instance of the `many_synapse` class with the appropriate parameters.
+- Generates synaptic weights using the training spike inputs and stimuli.
+- Stores and plots the final synaptic weights for each secondary neuron.
 
 ### 6. Testing the Network
-- Define a class `test_Network` to simulate the network using the generated synaptic weights.
-- Run the network on the test spike inputs and calculate the output spike trains.
+- Defines a class `test_Network` to simulate the network using the generated synaptic weights.
+- Runs the network on the test spike inputs and calculate the output spike trains.
 - Compare the predicted labels (based on the most firing neurons) with the actual labels from the test dataset.
 
 ### 7. Evaluation
-- Calculate and print the accuracy of the network based on the number of correct predictions.
+- Calculates and prints the accuracy of the network based on the number of correct predictions.
 
 ## Running the Code
 
