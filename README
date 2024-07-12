@@ -1,1 +1,74 @@
+# README
 
+## Overview
+
+This project involves building and testing a Spiking Neural Network (SNN) using the `jax`, `equinox`, and `snntorch` libraries. The SNN is designed to process input data encoded as spike trains, generate synaptic weights, and then test the network's performance using a test dataset.
+
+## Prerequisites
+
+Ensure you have the following Python libraries installed:
+- `jax`
+- `jax.numpy`
+- `numpy`
+- `matplotlib`
+- `equinox`
+- `snntorch`
+- `torch`
+- `pandas`
+- `google.colab`
+
+Install the required packages using the following commands:
+```python
+!pip install snntorch
+!pip install equinox
+```
+
+## Steps
+
+### 1. Importing Data
+- Mount the Google Drive and load the training and test datasets.
+- The datasets should be in CSV format.
+
+### 2. Data Encoding
+- Encode the data into spike trains using rate encoding.
+- Define parameters for spike length, gap length, number of synapses, timestep, and maximum spiking frequency.
+- Use the `generate_input_spikes` function to transform the datasets into input spike arrays.
+
+### 3. Stimulus Input Creation
+- Define parameters for stimulus magnitude and the number of secondary neurons.
+- Use the `create_input_stimuli` function to create the stimulus input for the network.
+
+### 4. Neural Network Model
+- Define a class `many_synapse` to model the neurons in the network, including the synaptic weight updates and neuron state updates.
+- Set various constants required for the differential equations governing the neural network behavior.
+
+### 5. Training the Network
+- Create an instance of the `many_synapse` class with the appropriate parameters.
+- Generate synaptic weights using the training spike inputs and stimuli.
+- Store and plot the final synaptic weights for each secondary neuron.
+
+### 6. Testing the Network
+- Define a class `test_Network` to simulate the network using the generated synaptic weights.
+- Run the network on the test spike inputs and calculate the output spike trains.
+- Compare the predicted labels (based on the most firing neurons) with the actual labels from the test dataset.
+
+### 7. Evaluation
+- Calculate and print the accuracy of the network based on the number of correct predictions.
+
+## Running the Code
+
+1. Ensure you have all the necessary packages installed.
+2. Mount the Google Drive and load your datasets.
+3. Execute the cells in sequence to encode the data, create the stimulus inputs, train the network, and test its performance.
+4. Observe the plotted synaptic weights and the final accuracy of the network.
+
+## Results
+
+- The synaptic weights connecting output neurons to input neurons are visualized using heatmaps.
+- The final accuracy of the network is printed at the end, showing the percentage of correct predictions on the test dataset.
+
+## Notes
+
+- Adjust the file paths for the datasets in the code (`arr_full_path` and `arr_test_path`).
+- Modify the network parameters as needed to fit your specific use case and dataset.
+- Ensure the datasets have the correct format and preprocessing steps applied before running the code.
